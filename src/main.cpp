@@ -1,6 +1,8 @@
 #include <QApplication>
 #include <QMainWindow>
+#include <QWidget>
 #include <QLabel>
+#include <QVBoxLayout>
 
 int main(int argc, char *argv[])
 {
@@ -11,11 +13,17 @@ int main(int argc, char *argv[])
     window.setWindowTitle("C++ User CRUD");
     window.resize(900, 600);
 
-    auto *label = new QLabel("User Management");
+    QWidget centralWidget;
 
-    label->setAlignment(Qt::AlignCenter);
+    window.setCentralWidget(&centralWidget);
 
-    window.setCentralWidget(label);
+    QVBoxLayout layout;
+
+    layout.setParent(&centralWidget);
+
+    QLabel title("User Management");
+
+    layout.addWidget(&title);
 
     window.show();
 
