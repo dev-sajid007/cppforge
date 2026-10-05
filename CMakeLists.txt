@@ -8,9 +8,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
 add_executable(cpp-user-crud
-    src/main.cpp
+        src/main.cpp
 )
 
 target_link_libraries(cpp-user-crud
-    PRIVATE Qt6::Widgets
+        PRIVATE Qt6::Widgets
 )

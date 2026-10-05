@@ -3,6 +3,7 @@
 #include <QWidget>
 #include <QLabel>
 #include <QVBoxLayout>
+#include <QPushButton>
 
 int main(int argc, char *argv[])
 {
@@ -18,12 +19,13 @@ int main(int argc, char *argv[])
     window.setCentralWidget(&centralWidget);
 
     QVBoxLayout layout;
-
-    layout.setParent(&centralWidget);
+    centralWidget.setLayout(&layout);
 
     QLabel title("User Management");
-
     layout.addWidget(&title);
+
+    QPushButton addButton("Add User");
+    layout.addWidget(&addButton);
 
     window.show();
 
