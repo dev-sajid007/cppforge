@@ -4,6 +4,7 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QPushButton>
+#include <QDebug>
 
 int main(int argc, char *argv[])
 {
@@ -19,13 +20,24 @@ int main(int argc, char *argv[])
     window.setCentralWidget(&centralWidget);
 
     QVBoxLayout layout;
+
     centralWidget.setLayout(&layout);
 
     QLabel title("User Management");
+
     layout.addWidget(&title);
 
     QPushButton addButton("Add User");
+
     layout.addWidget(&addButton);
+
+    QObject::connect(
+        &addButton,
+        &QPushButton::clicked,
+        []() {
+            qDebug() << "Add User clicked!";
+        }
+    );
 
     window.show();
 
