@@ -1,0 +1,8 @@
+build/
+*.user
+*.pro.user
+.vscode/
+.idea/
+*.o
+*.a
+*.so
